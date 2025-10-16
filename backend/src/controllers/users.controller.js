@@ -1,5 +1,5 @@
 import { query } from '../db.js';
-import bcrypt from 'bcrypt';
+import bcrypt from 'bcryptjs';
 
 export async function listUsers(req,res){
   const { rows } = await query('SELECT u.id, u.email, u.display_name, u.is_active, r.name as role FROM users u JOIN roles r ON r.id=u.role_id ORDER BY u.id');
