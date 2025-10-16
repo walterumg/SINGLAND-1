@@ -1,5 +1,5 @@
 import { query } from '../db.js';
-import bcrypt from 'bcrypt';
+import bcrypt from 'bcryptjs';
 import { signToken } from '../utils/auth.js';
 
 export async function login(req,res){
