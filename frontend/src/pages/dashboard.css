@@ -1,0 +1,361 @@
+/* ========== SIGLAD Dashboard Theme ========== */
+:root{
+  --sig-bg-1:#0f2040;
+  --sig-bg-2:#0a5bb8;
+  --sig-card:#203a70; 
+  --sig-card-ink:#e8eefc;
+  --sig-muted:#9fb3d9;
+  --sig-border:#2f3a55;
+  --sig-ring:#6aa8ff;
+  --sig-row:#162033;
+  --sig-row-alt:#18253b;
+  --sig-success:#21c08b;
+  --sig-danger:#ff6b6b;
+  --sig-warning:#f8c24e;
+  --sig-info:#4aa9ff;
+  --sig-btn-1:#007bff;
+  --sig-btn-2:#0056b3;
+  --sig-btn-3:#003d80;
+  --sig-radius:14px;
+  --sig-shadow:0 10px 30px rgba(0,0,0,.35);
+}
+
+/* Fondo sutil (si no quieres, comenta esta sección) */
+body{
+  background: radial-gradient(1200px 600px at 50% 110%, var(--sig-bg-2), var(--sig-bg-1) 60%);
+  color: #eaf0ff;
+}
+
+/* Titulares y barra superior */
+.container > .d-flex h4{
+  color:#fff;
+  letter-spacing:.2px;
+}
+.container > .d-flex .btn{
+  border-radius: 10px;
+}
+
+/* ===== Cards ===== */
+.card{
+  background: var(--sig-card);
+  color: var(--sig-card-ink);
+  border: 1px solid var(--sig-border);
+  border-radius: var(--sig-radius);
+  box-shadow: var(--sig-shadow);
+  overflow: hidden;
+}
+.card .card-body{ padding: 20px 20px; }
+.card h5{ font-weight:700; color:#fff; }
+
+/* ===== Filtros ===== */
+.row.g-2.mb-3 .form-control,
+.row.g-2.mb-3 .form-select{
+  background:#232b41;
+  color:#e8eefc;
+  border:1px solid var(--sig-border);
+  border-radius: 12px;
+  padding: 10px 12px;
+  transition: border .15s ease, box-shadow .15s ease, transform .05s ease;
+}
+.row.g-2.mb-3 .form-control::placeholder{ color:#9fb3d9; }
+.row.g-2.mb-3 .form-control:focus,
+.row.g-2.mb-3 .form-select:focus{
+  border-color: var(--sig-ring);
+  box-shadow: 0 0 0 3px #6aa8ff33;
+}
+
+/* ===== Botones ===== */
+.btn-primary{
+  background: linear-gradient(90deg,var(--sig-btn-1),var(--sig-btn-2));
+  border: none;
+}
+.btn-primary:hover{
+  filter: brightness(1.06);
+  transform: translateY(-1px);
+}
+.btn-outline-secondary{
+  color:#cfe1ff;
+  border:1px solid var(--sig-border);
+  background:#202a43;
+}
+.btn-outline-secondary:hover{
+  background:#273251;
+  border-color:#3b4a72;
+}
+.btn-group .btn{ border-radius:10px; }
+
+/* ===== Tabla ===== */
+.table{
+  color:#e8eefc;
+  margin-bottom: 0;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+.table thead th{
+  background:#1a2740;
+  color:#cfe1ff;
+  border: none;
+  font-weight:600;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+.table tbody tr{
+  background: var(--sig-row);
+}
+.table tbody tr:nth-child(even){
+  background: var(--sig-row-alt);
+}
+.table tbody tr:hover{
+  background:#21314f;
+}
+.table td, .table th{
+  border-top: 1px solid #223152;
+  vertical-align: middle;
+}
+.table .text-end{ padding-right: 8px; }
+
+/* Badges de estado */
+.badge.bg-success{
+  background: linear-gradient(90deg,#25d39a,#11b57f) !important;
+}
+.badge.bg-danger{
+  background: linear-gradient(90deg,#ff7d7d,#ff5656) !important;
+}
+.badge.bg-secondary{
+  background: linear-gradient(90deg,#94a3b8,#64748b) !important;
+}
+.badge.bg-info{
+  background: linear-gradient(90deg,#6ab8ff,#3998fa) !important;
+}
+
+/* ===== Alerts ===== */
+.alert{
+  border-radius: 12px;
+  border:1px solid #2f4269;
+  background:#1a2a4a;
+  color:#cfe1ff;
+}
+
+/* ===== Modales ===== */
+.modal.fade.show{ backdrop-filter: blur(2px); } /* solo si el navegador soporta */
+.modal-content{
+  background: #1c2236;
+  color:#e8eefc;
+  border:1px solid var(--sig-border);
+  border-radius: 16px;
+  box-shadow: var(--sig-shadow);
+}
+.modal-header{
+  border-bottom: 1px solid #263153;
+  background:#1a2740;
+  color:#fff;
+}
+.modal-title{ font-weight:700; }
+.btn-close{
+  filter: invert(1) grayscale(1);
+  opacity:.75;
+}
+.modal-body h6{
+  color:#9fb3d9;
+  font-weight:700;
+}
+
+/* Tabla dentro del modal */
+.modal-body .table{
+  background: transparent;
+}
+.modal-body .table thead th{
+  background:#1b2a47;
+}
+.modal-footer{
+  border-top: 1px solid #263153;
+}
+
+/* ===== PaperField ===== */
+.text-muted{ color: var(--sig-muted) !important; }
+.fw-semibold{ color:#e8eefc; }
+.border-bottom{
+  border-bottom: 1px dashed #2f3a55 !important;
+}
+
+/* ===== Formularios Admin Users ===== */
+.form-control, .form-select{
+  background:#232b41;
+  color:#e8eefc;
+  border:1px solid var(--sig-border);
+  border-radius: 12px;
+}
+.form-control:focus, .form-select:focus{
+  border-color: var(--sig-ring);
+  box-shadow: 0 0 0 3px #6aa8ff33;
+}
+.form-check-input{
+  background:#2a3553;
+  border:1px solid #3a486f;
+}
+.form-check-input:checked{
+  background-color:#2e7df5;
+  border-color:#2e7df5;
+}
+
+/* ===== Mesas de Usuarios ===== */
+.table.table-sm thead th{ font-size:.9rem; }
+.table.table-sm td{ font-size:.92rem; }
+
+/* ===== Misceláneo ===== */
+hr{
+  border-top: 1px solid #2a3656;
+  opacity: 1;
+}
+.small{ color:#a9bbd8 !important; }
+
+/* ===== Modales con texto oscuro ===== */
+.modal-content {
+  background: #ffffff !important;
+  color: #000000 !important;
+}
+
+.modal-header {
+  background: #1a2740 !important;
+  color: #ffffff !important;
+  border-bottom: 1px solid #cfd6e6;
+}
+
+.modal-body {
+  color: #000000 !important;
+}
+
+.modal-body h6,
+.modal-body .text-muted,
+.modal-body .fw-semibold,
+.modal-body td,
+.modal-body th {
+  color: #000000 !important;
+}
+
+.modal-footer {
+  background: #f4f6fa !important;
+  border-top: 1px solid #d0d5e0;
+}
+
+.table.table-sm th,
+.table.table-sm td {
+  color: #000000 !important;
+  background-color: #ffffff !important;
+}
+/* ===== Inputs claros para formularios y modales ===== */
+.modal-content input.form-control,
+.modal-content select.form-select,
+.modal-content textarea.form-control,
+.card input.form-control,
+.card select.form-select,
+.card textarea.form-control {
+  background-color: #f6f8fb !important;
+  color: #111 !important;
+  border: 1px solid #cbd5e1 !important;
+  border-radius: 10px;
+  padding: 10px 12px;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.modal-content input::placeholder,
+.card input::placeholder {
+  color: #777 !important;
+  opacity: 0.8;
+}
+
+.modal-content input:focus,
+.modal-content select:focus,
+.card input:focus,
+.card select:focus {
+  background-color: #ffffff !important;
+  border-color: #007bff !important;
+  box-shadow: 0 0 0 3px #007bff33 !important;
+  outline: none;
+}
+
+/* Checkbox y labels más visibles */
+.modal-content .form-check-input,
+.card .form-check-input {
+  accent-color: #007bff;
+}
+
+.modal-content .form-check-label,
+.card .form-check-label {
+  color: #111;
+  font-weight: 500;
+}
+
+/* ===== Mejor contraste general en el modal ===== */
+.modal-body label.form-label {
+  color: #000 !important;
+  font-weight: 600;
+}
+.modal-body {
+  background-color: #fff !important;
+  color: #000 !important;
+}
+.modal-header {
+  background-color: #1a2740 !important;
+  color: #fff !important;
+  border-bottom: 1px solid #cfd6e6;
+}
+.modal-footer {
+  background-color: #f6f8fb !important;
+  border-top: 1px solid #d0d5e0;
+}
+/* ===== Checkbox "Activo" mejorado ===== */
+/* Layout y separación */
+.card .form-check,
+.modal-content .form-check{
+  display:flex; align-items:center; gap:10px;
+}
+
+/* --- En cards (fondo oscuro) --- */
+.card .form-check-label{
+  color:#e8eefc;           /* texto claro */
+  font-weight:500;
+}
+.card .form-check-input{
+  width:1.1rem; height:1.1rem;
+  border-radius:6px;
+  background:#1c2946;
+  border:1.5px solid #3a4b71;
+  transition:all .15s ease;
+  accent-color: #2e7df5;   /* fallback moderno */
+}
+.card .form-check-input:hover{
+  filter: brightness(1.1);
+}
+.card .form-check-input:focus{
+  box-shadow:0 0 0 3px rgba(46,125,245,.35);
+  border-color:#2e7df5;
+}
+.card .form-check-input:checked{
+  background-color:#2e7df5;
+  border-color:#2e7df5;
+  box-shadow:0 0 0 3px rgba(46,125,245,.35);
+}
+
+/* --- En modales (fondo claro) --- */
+.modal-content .form-check-label{
+  color:#111;              /* texto oscuro */
+  font-weight:500;
+}
+.modal-content .form-check-input{
+  width:1.1rem; height:1.1rem;
+  border-radius:6px;
+  background:#f0f3f8;
+  border:1.5px solid #c7d2e5;
+  accent-color:#2e7df5;
+}
+.modal-content .form-check-input:focus{
+  box-shadow:0 0 0 3px rgba(46,125,245,.3);
+  border-color:#2e7df5;
+}
+.modal-content .form-check-input:checked{
+  background-color:#2e7df5;
+  border-color:#2e7df5;
+}

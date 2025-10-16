@@ -1,0 +1,53 @@
+/* Fondo y layout */
+.login-bg {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* oculta el pseudo-elemento */
+  /* ya sin filter aquí */
+}
+
+/* Capa de fondo animada solamente detrás */
+.login-bg::before {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  background: radial-gradient(circle at bottom, #007bff, #1e1e2f 80%);
+  background-size: cover;
+  filter: blur(2px);                /* aplica el blur solo al fondo */
+  animation: bgMove 12s ease-in-out infinite alternate;
+  z-index: 0;
+}
+
+/* La tarjeta queda por encima, nítida */
+.login-card {
+  position: relative;
+  z-index: 1;
+  background: rgba(40, 40, 50, 0.85);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.4);
+  width: 340px;
+  backdrop-filter: blur(10px);      /* efecto glass solo sobre el fondo */
+  text-align: center;
+}
+
+@keyframes bgMove {
+  0%   { transform: scale(1.02) translateY(-1%); }
+  100% { transform: scale(1.06) translateY(1%); }
+}
+
+/* Botón igual que antes */
+.btn-login {
+  background: linear-gradient(90deg, #007bff, #0056b3);
+  border: none;
+  color: white;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+.btn-login:hover {
+  background: linear-gradient(90deg, #0056b3, #003d80);
+  transform: scale(1.02);
+}

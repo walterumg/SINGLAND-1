@@ -1,0 +1,10 @@
+import { Router } from 'express';
+import { authRequired } from '../utils/auth.js';
+import { listDeclaraciones, cambiarEstado, getEstados, getDeclaracion } from '../controllers/declaraciones.controller.js';
+const r = Router();
+r.use(authRequired);
+r.get('/declaraciones', listDeclaraciones);
+r.get('/declaraciones/:numero', getDeclaracion);
+r.get('/estados', getEstados);
+r.patch('/declaraciones/:numero/estado', cambiarEstado);
+export default r;
